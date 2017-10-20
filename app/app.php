@@ -4,17 +4,20 @@
  * @var \Phalcon\Mvc\Micro $app
  */
 
-/**
- * Add your routes here
- */
-$app->get('/', function () {
-    echo $this['view']->render('index');
-});
+include_once('routes/index.php');
+include_once('routes/galaxy.php');
+include_once('routes/solarSystem.php');
+include_once('routes/world.php');
+include_once('routes/map.php');
 
 /**
  * Not found handler
  */
-$app->notFound(function () use($app) {
-    $app->response->setStatusCode(404, "Not Found")->sendHeaders();
-    echo $app['view']->render('404');
-});
+$app->notFound(
+    function () use($app) {
+        $app->response->setStatusCode(404, "Not Found");
+        $app->response->sendHeaders();
+        echo $app['view']->render('error/404');
+    }
+);
+
