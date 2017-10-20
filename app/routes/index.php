@@ -5,9 +5,9 @@
  */
 $app->get(
     '/',
-    function () {
+    function () use($app) {
         /** @var \Phalcon\Mvc\View\Simple $view */
-        $view = $this['view'];
+        $view = $app['view'];
         echo $view->render('index/index');
     }
 );
