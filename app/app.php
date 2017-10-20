@@ -9,6 +9,7 @@ include_once('routes/galaxy.php');
 include_once('routes/solarSystem.php');
 include_once('routes/world.php');
 include_once('routes/map.php');
+include_once('routes/resource.php');
 
 /**
  * Not found handler
