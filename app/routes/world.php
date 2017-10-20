@@ -21,7 +21,7 @@ $app->get(
         $echo = JsonResponse::render(
             $worlds,
             [
-                'related_urls' => [
+                'related_uris' => [
                     'maps' => '/map/list/{world_id}',
                 ],
             ]

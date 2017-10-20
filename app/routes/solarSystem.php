@@ -21,7 +21,7 @@ $app->get(
         $echo = JsonResponse::render(
             $solarSystems,
             [
-                'related_urls' => [
+                'related_uris' => [
                     'worlds' => '/world/list/{solar_system_id}',
                 ],
             ]

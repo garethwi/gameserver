@@ -14,7 +14,7 @@ $app->get(
         echo JsonResponse::render(
             $galaxies,
             [
-                'related_urls' => [
+                'related_uris' => [
                     'solar_systems' => '/solar-system/list/{galaxy_id}',
                 ],
             ]
