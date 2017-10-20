@@ -194,7 +194,6 @@ class Map extends Model
      */
     public function initialize()
     {
-        $this->setSchema("gameserver");
         $this->setSource("map");
     }
 

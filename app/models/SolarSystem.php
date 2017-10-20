@@ -104,7 +104,6 @@ class SolarSystem extends Model
      */
     public function initialize()
     {
-        $this->setSchema("gameserver");
         $this->setSource("solar_system");
     }
 

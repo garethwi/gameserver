@@ -104,7 +104,6 @@ class World extends Model
      */
     public function initialize()
     {
-        $this->setSchema("gameserver");
         $this->setSource("world");
     }
 

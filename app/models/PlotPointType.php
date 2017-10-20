@@ -74,7 +74,6 @@ class PlotPointType extends Model
      */
     public function initialize()
     {
-        $this->setSchema("gameserver");
         $this->setSource("plot_point_type");
     }
 

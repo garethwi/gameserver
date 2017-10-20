@@ -74,7 +74,6 @@ class Galaxy extends Model
      */
     public function initialize()
     {
-        $this->setSchema("gameserver");
         $this->setSource("galaxy");
     }
 
