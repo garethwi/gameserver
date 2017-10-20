@@ -19,7 +19,14 @@ $app->get(
                 ]
             ]
         )->toArray();
-        $echo = JsonResponse::render($maps);
+        $echo = JsonResponse::render(
+            $maps,
+            [
+                'related_uris' => [
+                    'load_map' => '/map/load/{mapId}'
+                ],
+            ]
+        );
         echo $echo;
     }
 );
