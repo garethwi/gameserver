@@ -24,7 +24,7 @@ $app->get(
             [
                 'related_uris' => [
                     'load_map' => '/map/load/{mapId}',
-                    'resource_list_by_map' => 'resource/list/by-map/{mapId}',
+                    'resource_list_by_map' => '/resource/list/by-map/{mapId}',
                 ],
             ]
         );
