@@ -21,4 +21,3 @@ $app->notFound(
         echo $app['view']->render('error/404');
     }
 );
-

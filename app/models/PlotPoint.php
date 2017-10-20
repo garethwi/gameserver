@@ -11,29 +11,23 @@ class PlotPoint extends Model
      *
      * @var integer
      * @Primary
-     * @Identity
      * @Column(type="integer", length=11, nullable=false)
-     */
-    protected $id;
-
-    /**
-     *
-     * @var integer
-     * @Column(type="integer", length=11, nullable=true)
      */
     protected $map_id;
 
     /**
      *
      * @var integer
-     * @Column(type="integer", length=11, nullable=true)
+     * @Primary
+     * @Column(type="integer", length=11, nullable=false)
      */
     protected $x;
 
     /**
      *
      * @var integer
-     * @Column(type="integer", length=11, nullable=true)
+     * @Primary
+     * @Column(type="integer", length=11, nullable=false)
      */
     protected $y;
 
@@ -50,19 +44,6 @@ class PlotPoint extends Model
      * @Column(type="integer", length=11, nullable=true)
      */
     protected $type_id;
-
-    /**
-     * Method to set the value of field id
-     *
-     * @param integer $id
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
 
     /**
      * Method to set the value of field map_id
@@ -130,16 +111,6 @@ class PlotPoint extends Model
     }
 
     /**
-     * Returns the value of field id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
      * Returns the value of field map_id
      *
      * @return integer
@@ -194,6 +165,7 @@ class PlotPoint extends Model
      */
     public function initialize()
     {
+        $this->setSchema("gameserver");
         $this->setSource("plot_point");
     }
 
