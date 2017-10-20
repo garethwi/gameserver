@@ -9,7 +9,7 @@ use Gameserver\Models\PlotPoint;
 use Gameserver\Services\JsonResponse;
 
 $app->get(
-    '/maps/list/{worldId}',
+    '/map/list/{worldId}',
     function ($worldId) {
         $maps = Map::find(
             [
@@ -25,7 +25,7 @@ $app->get(
 );
 
 $app->get(
-    '/maps/load/{mapId}',
+    '/map/load/{mapId}',
     function ($mapId) {
         $points = PlotPoint::find(
             [
