@@ -14,7 +14,7 @@ include_once('routes/map.php');
  * Not found handler
  */
 $app->notFound(
-    function () use($app) {
+    function () use ($app) {
         $app->response->setStatusCode(404, "Not Found");
         $app->response->sendHeaders();
         echo $app['view']->render('error/404');

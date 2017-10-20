@@ -13,8 +13,8 @@ $di->setShared('config', function () {
 /**
  * Sets the view component
  */
-$di->setShared('view', function () {
-    $config = $this->getConfig();
+$di->setShared('view', function () use ($di) {
+    $config = $di->getConfig();
 
     $view = new View();
     $view->setViewsDir($config->application->viewsDir);
@@ -24,8 +24,8 @@ $di->setShared('view', function () {
 /**
  * The URL component is used to generate all kind of urls in the application
  */
-$di->setShared('url', function () {
-    $config = $this->getConfig();
+$di->setShared('url', function () use ($di) {
+    $config = $di->getConfig();
 
     $url = new UrlResolver();
     $url->setBaseUri($config->application->baseUri);
@@ -35,8 +35,8 @@ $di->setShared('url', function () {
 /**
  * Database connection is created based in the parameters defined in the configuration file
  */
-$di->setShared('db', function () {
-    $config = $this->getConfig();
+$di->setShared('db', function () use ($di) {
+    $config = $di->getConfig();
 
     $class = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
     $params = [
