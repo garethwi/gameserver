@@ -20,12 +20,19 @@ $app->get(
             ]
         )->toArray();
 
-        echo JsonResponse::render($resources);
+        echo JsonResponse::render(
+            $resources,
+            [
+                'related_uris' => [
+                    'load_resources' => '/resource/load/{mapResourceId}',
+                ],
+            ]
+        );
     }
 );
 
 $app->get(
-    '/resource/list/{mapResourceId}',
+    '/resource/load/{mapResourceId}',
     function ($mapResourceId) {
         $resources = Resource::find(
             [
